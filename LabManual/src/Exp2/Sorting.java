@@ -9,6 +9,8 @@ public class Sorting {
         System.out.println(Arrays.toString(insertionSort(arr)));
     }
 
+    //Time Complexity of Insertion Sort: O(n^2)
+    //Space Complexity of Insertion Sort: O(1)
     public static int[] insertionSort (int[] arr) {
         for (int i = 1; i < arr.length; i++) {
             int temp = arr[i];
