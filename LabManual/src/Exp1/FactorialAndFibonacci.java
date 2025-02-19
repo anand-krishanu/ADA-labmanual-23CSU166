@@ -50,10 +50,32 @@ public class FactorialAndFibonacci {
 
         System.out.println("Enter a number: ");
         int n = sc.nextInt();
+        sc.close();
 
-        System.out.println("Fibonacci using iteration for " + n + ": " + fib(n));
-        System.out.println("Fibonacci using recursion for " + n + ": " + fibRec(n));
-        System.out.println("Factorial using iteration for " + n + ": " + fac(n));
-        System.out.println("Factorial using recursion for " + n + ": " + facRec(n));
+        long startTime, endTime;
+
+        startTime = System.nanoTime();
+        int fibIterative = fib(n);
+        endTime = System.nanoTime();
+        System.out.println("Fibonacci using iteration for " + n + ": " + fibIterative);
+        System.out.println("Execution Time (Iteration): " + (endTime - startTime) + " ns");
+
+        startTime = System.nanoTime();
+        int fibRecursive = fibRec(n);
+        endTime = System.nanoTime();
+        System.out.println("Fibonacci using recursion for " + n + ": " + fibRecursive);
+        System.out.println("Execution Time (Recursion): " + (endTime - startTime) + " ns");
+
+        startTime = System.nanoTime();
+        int facIterative = fac(n);
+        endTime = System.nanoTime();
+        System.out.println("Factorial using iteration for " + n + ": " + facIterative);
+        System.out.println("Execution Time (Iteration): " + (endTime - startTime) + " ns");
+
+        startTime = System.nanoTime();
+        int facRecursive = facRec(n);
+        endTime = System.nanoTime();
+        System.out.println("Factorial using recursion for " + n + ": " + facRecursive);
+        System.out.println("Execution Time (Recursion): " + (endTime - startTime) + " ns");
     }
 }
